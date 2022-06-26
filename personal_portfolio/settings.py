@@ -15,6 +15,7 @@ import django_heroku
 import dj_database_url
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-u4m(^qye^4$cq=23gywh2z+62o&h=zxd!%*t52fu0szh=11(dx
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['kaushik-personal-portfolio.herokuapp.com']
 
@@ -92,10 +93,10 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd780ih1asre6ff',
-        'USER': 'iujexiopunwznn',
-        'PASSWORD': '45daafac61d3464265693037c45b9f4cc867ec5221e44ea944b12efe23d2203c',
-        'HOST': 'ec2-52-72-56-59.compute-1.amazonaws.com',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
         'PORT': '5432',
     }
 }
