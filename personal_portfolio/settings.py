@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-u4m(^qye^4$cq=23gywh2z+62o&h=zxd!%*t52fu0szh=11(dx
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['kaushik-personal-portfolio.herokuapp.com']
 
 
 # Application definition
@@ -82,13 +82,23 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd780ih1asre6ff',
+        'USER': 'iujexiopunwznn',
+        'PASSWORD': '45daafac61d3464265693037c45b9f4cc867ec5221e44ea944b12efe23d2203c',
+        'HOST': 'ec2-52-72-56-59.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 
 # Password validation
